@@ -1,0 +1,814 @@
+index.html
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive IELTS resource hub">
+  <title>IELTS Hub</title>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<nav class="container-fluid">
+  <ul>
+    <li><strong>IELTS <span class="accent">Hub</span></strong></li>
+  </ul>
+
+  <ul>
+    <li><a href="#resources">Resources</a></li>
+    <li><a href="#mock">Mock Tests</a></li>
+    <li><a href="#social">Social</a></li>
+    <li>
+      <a href="#" role="button" id="themeToggle">
+        🌙 Dark
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<main class="container">
+
+  <div class="grid">
+    <section>
+
+      <hgroup class="hero">
+        <span class="pill">Interactive IELTS Resource Hub</span>
+
+        <h2>
+          Everything you need for IELTS,
+          in one place.
+        </h2>
+
+        <h3>
+          Speaking, Writing, Listening, Vocabulary,
+          mock tests, websites, videos and communities.
+        </h3>
+      </hgroup>
+
+      <p class="hero-text">
+        Search, filter and save IELTS resources from official
+        websites, mock-test platforms, YouTube, Instagram,
+        Facebook, X, LinkedIn and Reddit.
+      </p>
+
+      <figure>
+        <div class="hero-panel">
+
+          <div class="skill-box">
+            <span>🎙</span>
+            <strong>Speaking</strong>
+          </div>
+
+          <div class="skill-box">
+            <span>✍️</span>
+            <strong>Writing</strong>
+          </div>
+
+          <div class="skill-box">
+            <span>🎧</span>
+            <strong>Listening</strong>
+          </div>
+
+          <div class="skill-box">
+            <span>📚</span>
+            <strong>Vocabulary</strong>
+          </div>
+
+        </div>
+
+        <figcaption>
+          <a href="#resources">
+            Browse the IELTS resource directory
+          </a>
+        </figcaption>
+      </figure>
+
+
+      <section class="stats">
+
+        <article>
+          <small>Resource types</small>
+          <strong>8+</strong>
+          <span>Web, video, tests and communities</span>
+        </article>
+
+        <article>
+          <small>IELTS skills</small>
+          <strong>4</strong>
+          <span>Speaking, Writing, Listening and Vocabulary</span>
+        </article>
+
+        <article>
+          <small>Saved resources</small>
+          <strong id="savedCount">0</strong>
+          <span>Stored on your device</span>
+        </article>
+
+      </section>
+
+
+      <h3 id="resources">
+        IELTS Resource Directory
+      </h3>
+
+      <p>
+        Search by keyword or filter resources by category
+        and IELTS skill.
+      </p>
+
+
+      <div class="toolbar">
+
+        <input
+          id="searchBox"
+          type="search"
+          placeholder="Search IELTS resources..."
+          aria-label="Search IELTS resources"
+        >
+
+        <select id="typeFilter">
+          <option value="all">All resource types</option>
+          <option value="official">Official</option>
+          <option value="mock">Mock Tests</option>
+          <option value="web">Web</option>
+          <option value="youtube">YouTube</option>
+          <option value="social">Social</option>
+          <option value="community">Community</option>
+        </select>
+
+        <select id="skillFilter">
+          <option value="all">All skills</option>
+          <option value="speaking">Speaking</option>
+          <option value="writing">Writing</option>
+          <option value="listening">Listening</option>
+          <option value="vocab">Vocabulary</option>
+        </select>
+
+      </div>
+
+
+      <div class="chips">
+
+        <button class="chip active" data-chip="all">
+          All
+        </button>
+
+        <button class="chip" data-chip="official">
+          Official
+        </button>
+
+        <button class="chip" data-chip="mock">
+          Mock Tests
+        </button>
+
+        <button class="chip" data-chip="web">
+          Web
+        </button>
+
+        <button class="chip" data-chip="youtube">
+          YouTube
+        </button>
+
+        <button class="chip" data-chip="social">
+          Social
+        </button>
+
+        <button class="chip" data-chip="community">
+          Community
+        </button>
+
+      </div>
+
+
+      <div class="resource-grid" id="resourceGrid">
+
+
+        <article
+          class="resource-card"
+          data-id="ielts"
+          data-type="official"
+          data-skill="all"
+          data-name="IELTS official">
+
+          <button class="favorite">
+            ☆
+          </button>
+
+          <span class="badge">Official</span>
+
+          <h3>IELTS.org</h3>
+
+          <p>
+            Official IELTS test information,
+            preparation resources and sample questions.
+          </p>
+
+          <a
+            href="https://ielts.org/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Visit IELTS.org →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="british-council"
+          data-type="official"
+          data-skill="all"
+          data-name="British Council IELTS">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">Official</span>
+
+          <h3>British Council</h3>
+
+          <p>
+            IELTS practice tests, preparation material,
+            videos and exam guidance.
+          </p>
+
+          <a
+            href="https://takeielts.britishcouncil.org/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Visit British Council →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="idp"
+          data-type="official"
+          data-skill="all"
+          data-name="IDP IELTS">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">Official</span>
+
+          <h3>IDP IELTS</h3>
+
+          <p>
+            IELTS preparation resources,
+            exam information and test guidance.
+          </p>
+
+          <a
+            href="https://ielts.idp.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Visit IDP →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="mock-bc"
+          data-type="mock"
+          data-skill="all"
+          data-name="British Council Mock Tests">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">Mock Test</span>
+
+          <h3>British Council Practice Tests</h3>
+
+          <p>
+            Free IELTS practice materials for
+            Listening, Reading, Writing and Speaking.
+          </p>
+
+          <a
+            href="https://takeielts.britishcouncil.org/take-ielts/prepare/free-ielts-practice-tests"
+            target="_blank"
+            rel="noopener noreferrer">
+            Start practice →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="mock-iot"
+          data-type="mock"
+          data-skill="all"
+          data-name="IELTS Online Tests">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">Mock Test</span>
+
+          <h3>IELTS Online Tests</h3>
+
+          <p>
+            Independent IELTS-style timed
+            practice tests.
+          </p>
+
+          <a
+            href="https://ieltsonlinetests.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Open tests →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="ielts-liz"
+          data-type="web"
+          data-skill="all"
+          data-name="IELTS Liz">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">Website</span>
+
+          <h3>IELTS Liz</h3>
+
+          <p>
+            Lessons for speaking, writing,
+            listening, reading and vocabulary.
+          </p>
+
+          <a
+            href="https://ieltsliz.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Visit IELTS Liz →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="advantage"
+          data-type="web"
+          data-skill="writing"
+          data-name="IELTS Advantage writing">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">Website</span>
+
+          <h3>IELTS Advantage</h3>
+
+          <p>
+            Writing, speaking and IELTS
+            preparation strategies.
+          </p>
+
+          <a
+            href="https://www.ieltsadvantage.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Visit IELTS Advantage →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="youtube-speaking"
+          data-type="youtube"
+          data-skill="speaking"
+          data-name="YouTube IELTS Speaking">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">YouTube</span>
+
+          <h3>IELTS Speaking Videos</h3>
+
+          <p>
+            Speaking mock tests, cue cards,
+            fluency and pronunciation lessons.
+          </p>
+
+          <a
+            href="https://www.youtube.com/results?search_query=IELTS+speaking+band+7"
+            target="_blank"
+            rel="noopener noreferrer">
+            Search YouTube →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="youtube-writing"
+          data-type="youtube"
+          data-skill="writing"
+          data-name="YouTube IELTS Writing">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">YouTube</span>
+
+          <h3>IELTS Writing Videos</h3>
+
+          <p>
+            Task 1 and Task 2 structure,
+            essay planning and model answers.
+          </p>
+
+          <a
+            href="https://www.youtube.com/results?search_query=IELTS+writing+task+2"
+            target="_blank"
+            rel="noopener noreferrer">
+            Search YouTube →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="youtube-listening"
+          data-type="youtube"
+          data-skill="listening"
+          data-name="YouTube IELTS Listening">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">YouTube</span>
+
+          <h3>Listening Practice</h3>
+
+          <p>
+            Full IELTS listening tests,
+            answers and strategy videos.
+          </p>
+
+          <a
+            href="https://www.youtube.com/results?search_query=IELTS+listening+full+test"
+            target="_blank"
+            rel="noopener noreferrer">
+            Search YouTube →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="youtube-vocab"
+          data-type="youtube"
+          data-skill="vocab"
+          data-name="YouTube IELTS Vocabulary">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">YouTube</span>
+
+          <h3>Vocabulary Resources</h3>
+
+          <p>
+            IELTS vocabulary, collocations,
+            paraphrasing and academic words.
+          </p>
+
+          <a
+            href="https://www.youtube.com/results?search_query=IELTS+vocabulary+collocations"
+            target="_blank"
+            rel="noopener noreferrer">
+            Search YouTube →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="instagram"
+          data-type="social"
+          data-skill="all"
+          data-name="Instagram IELTS">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">Instagram</span>
+
+          <h3>IELTS on Instagram</h3>
+
+          <p>
+            Discover IELTS teachers,
+            vocabulary posts and quick study tips.
+          </p>
+
+          <a
+            href="https://www.instagram.com/explore/search/keyword/?q=ielts"
+            target="_blank"
+            rel="noopener noreferrer">
+            Search Instagram →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="twitter"
+          data-type="social"
+          data-skill="all"
+          data-name="Twitter X IELTS">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">X / Twitter</span>
+
+          <h3>IELTS on X</h3>
+
+          <p>
+            IELTS news, study threads,
+            English-learning accounts and tips.
+          </p>
+
+          <a
+            href="https://x.com/search?q=IELTS"
+            target="_blank"
+            rel="noopener noreferrer">
+            Search X →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="facebook"
+          data-type="social"
+          data-skill="all"
+          data-name="Facebook IELTS">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">Facebook</span>
+
+          <h3>IELTS on Facebook</h3>
+
+          <p>
+            IELTS pages, preparation groups
+            and learner communities.
+          </p>
+
+          <a
+            href="https://www.facebook.com/search/top?q=IELTS"
+            target="_blank"
+            rel="noopener noreferrer">
+            Search Facebook →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="linkedin"
+          data-type="social"
+          data-skill="all"
+          data-name="LinkedIn IELTS">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">LinkedIn</span>
+
+          <h3>IELTS on LinkedIn</h3>
+
+          <p>
+            IELTS organizations,
+            education professionals and teachers.
+          </p>
+
+          <a
+            href="https://www.linkedin.com/search/results/all/?keywords=IELTS"
+            target="_blank"
+            rel="noopener noreferrer">
+            Search LinkedIn →
+          </a>
+
+        </article>
+
+
+        <article
+          class="resource-card"
+          data-id="reddit"
+          data-type="community"
+          data-skill="all"
+          data-name="Reddit IELTS">
+
+          <button class="favorite">☆</button>
+
+          <span class="badge">Reddit</span>
+
+          <h3>r/IELTS</h3>
+
+          <p>
+            IELTS preparation discussions,
+            exam experiences and study resources.
+          </p>
+
+          <a
+            href="https://www.reddit.com/r/IELTS/"
+            target="_blank"
+            rel="noopener noreferrer">
+            Visit r/IELTS →
+          </a>
+
+        </article>
+
+      </div>
+
+
+      <p
+        class="empty-message"
+        id="emptyMessage"
+        hidden>
+        No matching resources found.
+      </p>
+
+
+      <h3 id="mock">
+        Interactive Study Guide
+      </h3>
+
+      <p>
+        Click each skill to open a suggested
+        practice routine.
+      </p>
+
+
+      <div class="accordion">
+
+        <button class="accordion-button">
+          🎙 Speaking Practice
+          <span>＋</span>
+        </button>
+
+        <div class="accordion-content">
+          Practice five Part 1 questions,
+          record a two-minute Part 2 answer,
+          then complete three Part 3 questions.
+        </div>
+
+      </div>
+
+
+      <div class="accordion">
+
+        <button class="accordion-button">
+          ✍️ Writing Practice
+          <span>＋</span>
+        </button>
+
+        <div class="accordion-content">
+          Spend five minutes planning,
+          write under timed conditions,
+          then review coherence, grammar,
+          vocabulary and task response.
+        </div>
+
+      </div>
+
+
+      <div class="accordion">
+
+        <button class="accordion-button">
+          🎧 Listening Practice
+          <span>＋</span>
+        </button>
+
+        <div class="accordion-content">
+          Complete one section without pausing,
+          review mistakes, replay difficult parts
+          and record why each mistake happened.
+        </div>
+
+      </div>
+
+
+      <div class="accordion">
+
+        <button class="accordion-button">
+          📚 Vocabulary Practice
+          <span>＋</span>
+        </button>
+
+        <div class="accordion-content">
+          Choose one IELTS topic,
+          learn 8–12 collocations and use
+          them in your own Speaking or Writing answers.
+        </div>
+
+      </div>
+
+
+      <div class="quality-note" id="social">
+
+        <h3>Resource quality note</h3>
+
+        <p>
+          Social media and community resources can be useful
+          for tips and experiences. Confirm exam rules,
+          scoring criteria, booking details and official
+          test information with IELTS.org, British Council
+          or IDP.
+        </p>
+
+      </div>
+
+    </section>
+  </div>
+
+</main>
+
+
+<section aria-label="Subscribe example">
+
+  <div class="container">
+
+    <article>
+
+      <hgroup>
+        <h2>Build your IELTS study stack</h2>
+        <h3>
+          Save the resources that match your study style.
+        </h3>
+      </hgroup>
+
+      <form class="grid" id="subscribeForm">
+
+        <input
+          type="text"
+          id="firstname"
+          name="firstname"
+          placeholder="Your name"
+          aria-label="Your name"
+          required
+        >
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your email"
+          aria-label="Your email"
+          required
+        >
+
+        <button type="submit">
+          Create my list
+        </button>
+
+      </form>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<footer class="container">
+
+  <small>
+    <a href="#resources">Resources</a>
+    •
+    <a href="#mock">Study Guide</a>
+    •
+    <a href="#social">Community</a>
+  </small>
+
+</footer>
+
+
+<div id="toast" class="toast">
+  Saved
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
